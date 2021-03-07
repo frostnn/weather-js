@@ -2,7 +2,9 @@ import "../scss/main.scss";
 import "../index.html";
 import "regenerator-runtime/runtime";
 import CardWeather from "./components/CardWeather/CardWeather";
+import { removeHeadler } from "../utils/removeHandler";
 
+const root = document.querySelector("#root");
 const searchCity = document.querySelector("#search");
 const searchBtn = document.querySelector("#search-btn");
 
@@ -47,8 +49,10 @@ const getCity = async (town) => {
 };*/
 
 CardWeather("Moscow");
-CardWeather("Omsk");
-CardWeather("Tomsk");
+CardWeather("Sankt peterburg");
+CardWeather("Novosibirsk");
+CardWeather("Ekaterinburg");
 searchBtn.addEventListener("click", () => {
   CardWeather(searchCity.value);
 });
+root.addEventListener("click", removeHeadler);

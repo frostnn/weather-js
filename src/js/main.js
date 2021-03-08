@@ -3,10 +3,9 @@ import "../index.html";
 import "regenerator-runtime/runtime";
 import CardWeather from "./components/CardWeather/CardWeather";
 import { removeHeadler } from "../utils/removeHandler";
-
-const root = document.querySelector("#root");
-const searchCity = document.querySelector("#search");
-const searchBtn = document.querySelector("#search-btn");
+import removeHandlerModal from "../utils/removeHandlerModal";
+/* import { addHeadlerModal } from "../utils/addHandlerModal"; */
+import { root, searchBtn, searchCity } from "../utils/root";
 
 /* function fns(e) {
   searchBtn.addEventListener("click", () => {
@@ -52,7 +51,15 @@ CardWeather("Moscow");
 CardWeather("Sankt peterburg");
 CardWeather("Novosibirsk");
 CardWeather("Ekaterinburg");
+
 searchBtn.addEventListener("click", () => {
-  CardWeather(searchCity.value);
+  if (searchCity.value) {
+    CardWeather(searchCity.value);
+  } else {
+    console.log("Please fill in the field");
+  }
 });
+
 root.addEventListener("click", removeHeadler);
+
+removeHandlerModal();

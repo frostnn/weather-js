@@ -1,1 +1,1 @@
-"# weather-js" 
+"# Weather forecast for Russian cities"

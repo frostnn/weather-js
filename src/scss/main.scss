@@ -171,8 +171,8 @@ body {
 }
 
 .modal_content {
-  width: 700px;
-  height: 400px;
+  width: 900px;
+  height: 505px;
   background: #fff;
   position: fixed;
   margin: 0 auto;
@@ -181,6 +181,7 @@ body {
   bottom: 0;
   right: 0;
   border-radius: 10px;
+  padding: 10px;
 }
 
 .modal {
@@ -196,13 +197,53 @@ body {
 }
 
 .modal_content-close {
-  padding: 10px;
+  padding: 3px;
   font-size: 18px;
   position: absolute;
   right: 0;
   top: 0;
+  cursor: pointer;
 }
 
 .show {
   display: block;
+}
+
+.weekly_cards-item {
+  margin: 10px 0;
+}
+
+.weekly_cards {
+  padding: 10px;
+}
+
+.modal_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.weekly_cards {
+  text-align: center;
+}
+
+.weekly_cards-item_img {
+  max-width: 32px;
+}
+.weekly_cards-item_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.weekly_cards {
+  border-radius: 10px;
+  background: #68bfff;
+  margin-bottom: 10px;
+  width: 152px;
+}
+
+.weekly_cards-item.desc img {
+  max-width: 50px;
 }

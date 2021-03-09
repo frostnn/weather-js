@@ -6,3 +6,4 @@ export const searchCity = document.querySelector("#search");
 export const searchBtn = document.querySelector("#search-btn");
 export const modal = document.querySelector("#modal");
 export const modalContent = document.querySelector(".modal_content");
+export const pollutionMap = document.querySelector("#pollution");

@@ -3,13 +3,15 @@ import thermometer_img from "../../../img/thermometer.png";
 import wind_img from "../../../img/wind.png";
 import visibility_img from "../../../img/visibility.png";
 import getImgWeather from "../../../utils/getImgWeather";
-import getWeatherCity from "../../../utils/getWeatherCity";
+import getWeatherCityApi from "../../../utils/getWeatherCityApi";
 import errorMessage from "../Error/errorMessage";
 import { modal, weather } from "../../../utils/root";
 import WeeklyWeather from "../WeeklyWeather/WeeklyWeather";
+import AirPollution from "../AirPollution/AirPollution";
 
 const CardWeather = async (city = "Ufa") => {
-  let data = await getWeatherCity(city, weather);
+  let data = await getWeatherCityApi(city, weather);
+  console.log(data);
   if (data.cod == 404) {
     errorMessage(data.message);
     return false;
@@ -22,6 +24,7 @@ const CardWeather = async (city = "Ufa") => {
     weather: { [0]: desc },
     main: { feels_like, humidity, temp, temp_max, temp_min },
     sys: { sunrise, sunset },
+    coord: { lon, lat },
   } = data;
   const description = desc.description;
   let html = `
@@ -29,7 +32,7 @@ const CardWeather = async (city = "Ufa") => {
     <div class="weather_card-header">
       <div class="weather_card-close" data-id=${id}>&#10006</div>
       <div class='weather_card-header_img'>
-        <img src="${getImgWeather(description)}" alt="">
+        <img src="${getImgWeather(description, false)}" alt="">
       </div>
       <div class='weather_card-header_city'>${name}</div>
       <div class='weather_card-header_desc'>${description}</div>
@@ -92,6 +95,10 @@ const CardWeather = async (city = "Ufa") => {
         modal.classList.add("show");
       }
     });
+  })();
+
+  (function () {
+    AirPollution(lon, lat, name);
   })();
 };
 

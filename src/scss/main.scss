@@ -12,6 +12,7 @@ body {
     rgba(104, 191, 255, 1) 100%,
     rgba(0, 212, 255, 1) 100%
   );
+  color: #444;
 }
 .weather {
   display: flex;
@@ -83,8 +84,6 @@ body {
   font-size: 14px;
   background: #fff;
   max-height: 100px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 .weather_card-footer_parametr {
@@ -246,4 +245,86 @@ body {
 
 .weekly_cards-item.desc img {
   max-width: 50px;
+}
+
+.progress_bar {
+  width: 100%px;
+  height: 4px;
+  background: lightgrey;
+  border-radius: 4px;
+}
+
+.progress_bar-line {
+  height: 4px;
+  background: rgb(30, 255, 79);
+  border-radius: 4px;
+}
+.mid,
+.normal {
+  width: 25%;
+}
+.mid {
+  width: 50%;
+  background: rgb(187, 255, 0);
+}
+.high {
+  background: rgb(241, 238, 7);
+  width: 75%;
+}
+.very_high {
+  background: rgb(236, 2, 2);
+  width: 100%;
+}
+
+.progress_wrapper {
+  background: #fff;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+  padding: 0 10px 10px 10px;
+}
+
+.progress_text {
+  margin-bottom: 10px;
+}
+
+.weekly_cards-item.title {
+  font-weight: 600;
+  color: #fff;
+}
+
+.progress_text span {
+  padding-left: 5px;
+  font-weight: 600;
+}
+
+.widget_current-city {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background: #fff;
+  max-width: 130px;
+  border-radius: 21px;
+  padding: 13px;
+}
+
+.widget_current-city_title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.widget_current-city_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.widget_current-city_icon {
+  max-width: 20px;
+  margin-right: 10px;
+}
+
+.widget_current-city_temp {
+  font-size: 14px;
 }

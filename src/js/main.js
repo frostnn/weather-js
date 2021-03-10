@@ -4,8 +4,8 @@ import "regenerator-runtime/runtime";
 import CardWeather from "./components/CardWeather/CardWeather";
 import { removeHeadler } from "../utils/removeHandler";
 import removeHandlerModal from "../utils/removeHandlerModal";
-/* import { addHeadlerModal } from "../utils/addHandlerModal"; */
 import { root, searchBtn, searchCity } from "../utils/root";
+import WidgetWeather from "./components/WidgetWeather/WidgetWeather";
 
 CardWeather("Moscow");
 CardWeather("Sankt peterburg");
@@ -23,3 +23,5 @@ searchBtn.addEventListener("click", () => {
 root.addEventListener("click", removeHeadler);
 
 removeHandlerModal();
+
+WidgetWeather();

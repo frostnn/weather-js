@@ -5,7 +5,7 @@ import visibility_img from "../../../img/visibility.png";
 import getImgWeather from "../../../utils/getImgWeather";
 import getWeatherCityApi from "../../../utils/getWeatherCityApi";
 import errorMessage from "../Error/errorMessage";
-import { modal, weather } from "../../../utils/root";
+import { modal, root, weather } from "../../../utils/root";
 import WeeklyWeather from "../WeeklyWeather/WeeklyWeather";
 import AirPollution from "../AirPollution/AirPollution";
 
@@ -80,6 +80,7 @@ const CardWeather = async (city = "Ufa") => {
         </div>
       </div>
     </div>
+    ${await AirPollution(lon, lat, name)}
   </div>
   `;
 
